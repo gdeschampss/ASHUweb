@@ -11,12 +11,12 @@ export const metadata = {
 
 export default function AcademiaPage() {
   return (
-    <main className="pt-28 pb-20 bg-[#F5EFE6] min-h-screen">
+    <main className="pt-20 pb-20 bg-ashu-cream min-h-screen">
       {/* Top Banner */}
-      <section className="relative py-16 bg-[#037533] text-white border-b-4 border-[#DD0B14]">
+      <section className="relative py-16 bg-ashu-green text-white border-b-4 border-ashu-red">
         <CrossPattern color="#FFFFFF" opacity={0.05} size={48} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#DD0B14] rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-md">
+        <div data-reveal-stagger className="mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-ashu-red rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-md">
             <ShieldCheck className="w-4 h-4" />
             <span>GRATUITA PARA ASSOCIADOS</span>
           </div>
@@ -33,11 +33,11 @@ export default function AcademiaPage() {
 
       {/* Main Grid */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div data-reveal-stagger className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div data-reveal-stagger className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Image Column */}
             <div className="lg:col-span-6">
-              <div className="relative h-[420px] rounded-[24px] overflow-hidden border-2 border-[#037533]/20 shadow-xl">
+              <div className="relative h-[420px] rounded-[24px] overflow-hidden border-2 border-ashu-green/20 shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80"
                   alt="Academia ASHU HU UFSC"
@@ -61,27 +61,27 @@ export default function AcademiaPage() {
             {/* Info Column */}
             <div className="lg:col-span-6 space-y-6">
               {/* Pricing & Hours Card 1: Associados */}
-              <div className="bg-white p-6 rounded-[24px] border-2 border-[#037533] shadow-md space-y-4">
+              <div className="bg-white p-6 rounded-[24px] border-2 border-ashu-green shadow-md space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 bg-[#E8F3EC] text-[#037533] text-xs font-bold uppercase rounded-lg">
+                  <span className="px-3 py-1 bg-ashu-green-light text-ashu-green text-xs font-bold uppercase rounded-lg">
                     Associados ASHU
                   </span>
-                  <span className="text-2xl font-black text-[#037533] uppercase">
+                  <span className="text-2xl font-black text-ashu-green uppercase">
                     100% Grátis
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#1A1D1B] font-serif">
+                <h3 className="text-xl font-bold text-ink font-serif">
                   Acesso Completo Incluso na Mensalidade
                 </h3>
 
-                <div className="p-4 bg-[#F5EFE6] rounded-xl text-xs text-[#1A1D1B] space-y-2 border border-[#037533]/15">
+                <div className="p-4 bg-ashu-cream rounded-xl text-xs text-ink space-y-2 border border-ashu-green/15">
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-[#037533]" />
+                    <Clock className="w-4 h-4 text-ashu-green" />
                     <span><strong>Horário de Funcionamento:</strong> 8h30 às 20h30</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4 text-[#DD0B14]" />
+                    <Users className="w-4 h-4 text-ashu-red" />
                     <span><strong>Presença do Professor:</strong> 14h30 às 20h30</span>
                   </div>
                 </div>
@@ -94,14 +94,14 @@ export default function AcademiaPage() {
                     Comunidade (Não-Associados)
                   </span>
                   <div className="text-right">
-                    <span className="text-2xl font-black text-[#DD0B14] tabular-nums">
+                    <span className="text-2xl font-black text-ashu-red tabular-nums">
                       R$ 90,00
                     </span>
                     <span className="text-[11px] text-gray-500 block">/ mês</span>
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-[#1A1D1B] font-serif">
+                <h3 className="text-lg font-bold text-ink font-serif">
                   Plano para a Comunidade Externa
                 </h3>
 
@@ -113,7 +113,7 @@ export default function AcademiaPage() {
               <div className="pt-2">
                 <Link
                   href="/seja-associado"
-                  className="w-full py-4 bg-[#DD0B14] hover:bg-[#A80810] text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md flex items-center justify-center gap-2 transition-colors"
+                  className="w-full py-4 bg-ashu-red hover:bg-ashu-red-dark text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md flex items-center justify-center gap-2 transition-colors"
                 >
                   <span>Filie-se para ter Academia Grátis</span>
                   <ArrowRight className="w-4 h-4" />

@@ -14,28 +14,56 @@
 
   --radius-ashu-button: 8px;
   --radius-ashu-card: 20px;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-:root {
-  --ashu-red: #DD0B14;
-  --ashu-red-dark: #A80810;
-  --ashu-green: #037533;
-  --ashu-green-dark: #024E22;
-  --ashu-green-light: #E8F3EC;
-  --ashu-cream: #F5EFE6;
-  --ashu-white: #FFFFFF;
-  --ink: #1A1D1B;
+html {
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background-color: var(--ashu-cream);
-  color: var(--ink);
-  font-family: var(--font-inter), system-ui, sans-serif;
-  overflow-x: hidden;
+  background-color: var(--color-ashu-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
 }
 
 h1, h2, h3, .font-serif-ashu {
-  font-family: var(--font-lora), Georgia, serif;
+  font-family: var(--font-serif);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ashu-green);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Lenis (scroll suave) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Estado inicial das animações de revelação (ver RevealController) */
+.js [data-reveal],
+.js [data-reveal-stagger] > :not([data-reveal-stagger]) {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal],
+  .js [data-reveal-stagger] > :not([data-reveal-stagger]) {
+    opacity: 1;
+  }
 }
 
 /* Custom scrollbar */
@@ -43,14 +71,14 @@ h1, h2, h3, .font-serif-ashu {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--ashu-cream);
+  background: var(--color-ashu-cream);
 }
 ::-webkit-scrollbar-thumb {
   background: #03753366;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ashu-green);
+  background: var(--color-ashu-green);
 }
 
 .tabular-nums {

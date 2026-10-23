@@ -26,13 +26,13 @@ const CONVENIOS_LIST = [
 
 export default function SejaAssociadoPage() {
   return (
-    <main className="pt-28 pb-28 bg-[#F5EFE6] min-h-screen relative">
+    <main className="pt-20 pb-28 bg-ashu-cream min-h-screen relative">
       <StickyMobileCTA />
 
       {/* Header Banner */}
-      <section className="relative py-16 bg-[#DD0B14] text-white border-b-4 border-[#037533]">
+      <section className="relative py-16 bg-ashu-red text-white border-b-4 border-ashu-green">
         <CrossPattern color="#FFFFFF" opacity={0.06} size={50} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
+        <div data-reveal-stagger className="mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider mb-4">
             <UserPlus className="w-4 h-4" />
             <span>Filiação ASHU</span>
@@ -48,24 +48,24 @@ export default function SejaAssociadoPage() {
 
       {/* Publico Elegivel */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white p-8 sm:p-12 rounded-[24px] border border-[#037533]/20 shadow-md">
+        <div data-reveal-stagger className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white p-8 sm:p-12 rounded-[24px] border border-ashu-green/20 shadow-md">
             <div className="text-center max-w-2xl mx-auto mb-10">
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#037533] font-serif mb-2">
+              <h2 className="text-2xl sm:text-3xl font-bold text-ashu-green font-serif mb-2">
                 Quem pode se associar?
               </h2>
-              <p className="text-sm text-[#024E22]/80">
+              <p className="text-sm text-ashu-green-dark/80">
                 A ASHU é de todos que constroem a história do Hospital Universitário diariamente.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="p-6 bg-[#E8F3EC] rounded-2xl border border-[#037533]/20 flex items-start gap-4">
-                <div className="p-3 bg-[#037533] text-white rounded-xl shrink-0">
+            <div data-reveal-stagger className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              <div className="p-6 bg-ashu-green-light rounded-2xl border border-ashu-green/20 flex items-start gap-4">
+                <div className="p-3 bg-ashu-green text-white rounded-xl shrink-0">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-base text-[#024E22] mb-1">
+                  <h3 className="font-bold text-base text-ashu-green-dark mb-1">
                     Servidores Efetivos
                   </h3>
                   <p className="text-xs text-gray-700 leading-relaxed">
@@ -74,12 +74,12 @@ export default function SejaAssociadoPage() {
                 </div>
               </div>
 
-              <div className="p-6 bg-[#F5EFE6] rounded-2xl border border-[#037533]/20 flex items-start gap-4">
-                <div className="p-3 bg-[#DD0B14] text-white rounded-xl shrink-0">
+              <div className="p-6 bg-ashu-cream rounded-2xl border border-ashu-green/20 flex items-start gap-4">
+                <div className="p-3 bg-ashu-red text-white rounded-xl shrink-0">
                   <HeartPulse className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-base text-[#1A1D1B] mb-1">
+                  <h3 className="font-bold text-base text-ink mb-1">
                     Terceirizados do HU
                   </h3>
                   <p className="text-xs text-gray-700 leading-relaxed">
@@ -93,59 +93,59 @@ export default function SejaAssociadoPage() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-16 bg-white border-y border-[#037533]/15">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white border-y border-ashu-green/15">
+        <div data-reveal-stagger className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#037533] block mb-1">
+            <span className="text-xs font-bold uppercase tracking-wider text-ashu-green block mb-1">
               Valores Justos
             </span>
-            <h2 className="text-3xl font-bold text-[#1A1D1B] font-serif">
+            <h2 className="text-3xl font-bold text-ink font-serif">
               Quanto custa se associar?
             </h2>
-            <p className="text-xs sm:text-sm text-[#024E22]/80 mt-2">
+            <p className="text-xs sm:text-sm text-ashu-green-dark/80 mt-2">
               Desconto em folha sem burocracia nem taxas ocultas.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div data-reveal-stagger className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Card 1: Servidor Efetivo */}
-            <div className="bg-[#F5EFE6] p-8 rounded-[24px] border-2 border-[#037533] shadow-lg flex flex-col justify-between relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-[#037533] text-white px-4 py-1 text-[11px] font-bold uppercase rounded-bl-xl">
+            <div className="bg-ashu-cream p-8 rounded-[24px] border-2 border-ashu-green shadow-lg flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-ashu-green text-white px-4 py-1 text-[11px] font-bold uppercase rounded-bl-xl">
                 Recomendado
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-[#037533] font-serif mb-2">
+                <h3 className="text-xl font-bold text-ashu-green font-serif mb-2">
                   Servidor Efetivo HU / EBSERH
                 </h3>
                 <p className="text-xs text-gray-600 mb-6">
                   Acesso completo a todas as áreas e convênios para o titular e dependentes.
                 </p>
 
-                <div className="mb-6 p-4 bg-white rounded-xl border border-[#037533]/20">
-                  <span className="text-3xl font-black text-[#037533] tabular-nums">
+                <div className="mb-6 p-4 bg-white rounded-xl border border-ashu-green/20">
+                  <span className="text-3xl font-black text-ashu-green tabular-nums">
                     1%
                   </span>
-                  <span className="text-xs font-bold text-[#1A1D1B] ml-2">
+                  <span className="text-xs font-bold text-ink ml-2">
                     do salário base
                   </span>
                 </div>
 
-                <ul className="space-y-2.5 text-xs text-[#1A1D1B]">
+                <ul className="space-y-2.5 text-xs text-ink">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#037533]" />
+                    <CheckCircle2 className="w-4 h-4 text-ashu-green" />
                     <span>Academia 100% gratuita</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#037533]" />
+                    <CheckCircle2 className="w-4 h-4 text-ashu-green" />
                     <span>Desconto no Restaurante A&apos;ntenas</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#037533]" />
+                    <CheckCircle2 className="w-4 h-4 text-ashu-green" />
                     <span>Desconto no CEI-ASHU</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#037533]" />
+                    <CheckCircle2 className="w-4 h-4 text-ashu-green" />
                     <span>Acesso a Planos de Saúde e Odonto</span>
                   </li>
                 </ul>
@@ -162,9 +162,9 @@ export default function SejaAssociadoPage() {
             </div>
 
             {/* Card 2: Terceirizados */}
-            <div className="bg-[#F5EFE6] p-8 rounded-[24px] border-2 border-gray-300 hover:border-[#DD0B14] shadow-sm transition-all flex flex-col justify-between">
+            <div className="bg-ashu-cream p-8 rounded-[24px] border-2 border-gray-300 hover:border-ashu-red shadow-sm transition-all flex flex-col justify-between">
               <div>
-                <h3 className="text-xl font-bold text-[#1A1D1B] font-serif mb-2">
+                <h3 className="text-xl font-bold text-ink font-serif mb-2">
                   Terceirizados do HU
                 </h3>
                 <p className="text-xs text-gray-600 mb-6">
@@ -172,29 +172,29 @@ export default function SejaAssociadoPage() {
                 </p>
 
                 <div className="mb-6 p-4 bg-white rounded-xl border border-gray-200">
-                  <span className="text-3xl font-black text-[#DD0B14] tabular-nums">
+                  <span className="text-3xl font-black text-ashu-red tabular-nums">
                     2%
                   </span>
-                  <span className="text-xs font-bold text-[#1A1D1B] ml-2">
+                  <span className="text-xs font-bold text-ink ml-2">
                     do salário base
                   </span>
                 </div>
 
-                <ul className="space-y-2.5 text-xs text-[#1A1D1B]">
+                <ul className="space-y-2.5 text-xs text-ink">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#DD0B14]" />
+                    <CheckCircle2 className="w-4 h-4 text-ashu-red" />
                     <span>Uso da academia e quadras</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#DD0B14]" />
+                    <CheckCircle2 className="w-4 h-4 text-ashu-red" />
                     <span>Desconto no Restaurante A&apos;ntenas</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#DD0B14]" />
+                    <CheckCircle2 className="w-4 h-4 text-ashu-red" />
                     <span>Clube de Benefícios & Convênios</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#DD0B14]" />
+                    <CheckCircle2 className="w-4 h-4 text-ashu-red" />
                     <span>Participação nos eventos e festas</span>
                   </li>
                 </ul>
@@ -215,20 +215,20 @@ export default function SejaAssociadoPage() {
 
       {/* Grid de Beneficios Incluidos */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div data-reveal-stagger className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="text-2xl font-bold text-[#037533] font-serif">
+            <h2 className="text-2xl font-bold text-ashu-green font-serif">
               Resumo dos Benefícios Inclusos
             </h2>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+          <div data-reveal-stagger className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
             {CONVENIOS_LIST.map((item) => (
               <div
                 key={item}
-                className="px-4 py-2.5 bg-white rounded-full border border-[#037533]/20 text-xs font-bold text-[#024E22] flex items-center gap-2 shadow-2xs"
+                className="px-4 py-2.5 bg-white rounded-full border border-ashu-green/20 text-xs font-bold text-ashu-green-dark flex items-center gap-2 shadow-2xs"
               >
-                <CheckCircle2 className="w-4 h-4 text-[#037533]" />
+                <CheckCircle2 className="w-4 h-4 text-ashu-green" />
                 <span>{item}</span>
               </div>
             ))}
@@ -237,13 +237,13 @@ export default function SejaAssociadoPage() {
       </section>
 
       {/* Download Section (Ficha em PDF) */}
-      <section id="formulario-download" className="py-16 bg-white border-t border-[#037533]/15">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="p-4 bg-[#E8F3EC] text-[#037533] rounded-2xl w-fit mx-auto">
+      <section id="formulario-download" className="py-16 bg-white border-t border-ashu-green/15">
+        <div data-reveal-stagger className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <div className="p-4 bg-ashu-green-light text-ashu-green rounded-2xl w-fit mx-auto">
             <FileText className="w-8 h-8" />
           </div>
 
-          <h2 className="text-3xl font-bold text-[#1A1D1B] font-serif">
+          <h2 className="text-3xl font-bold text-ink font-serif">
             Baixe a Ficha de Autorização de Desconto
           </h2>
 
@@ -251,10 +251,10 @@ export default function SejaAssociadoPage() {
             Preencha a ficha de autorização de desconto em folha e entregue na Secretaria da ASHU (anexo ao HU/UFSC) ou envie digitalizada pelo WhatsApp.
           </p>
 
-          <div className="p-8 bg-[#F5EFE6] rounded-[24px] border-2 border-dashed border-[#037533]/40 max-w-xl mx-auto space-y-4">
+          <div className="p-8 bg-ashu-cream rounded-[24px] border-2 border-dashed border-ashu-green/40 max-w-xl mx-auto space-y-4">
             <div className="flex items-center justify-between text-left">
               <div>
-                <h4 className="font-bold text-sm text-[#037533]">Ficha_Inscricao_ASHU.pdf</h4>
+                <h4 className="font-bold text-sm text-ashu-green">Ficha_Inscricao_ASHU.pdf</h4>
                 <p className="text-xs text-gray-500">Documento Oficial em PDF (1.2 MB)</p>
               </div>
               <DownloadButton

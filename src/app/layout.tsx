@@ -1,8 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Lora, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
+import { MotionProvider } from "@/components/motion/MotionProvider";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { RevealController } from "@/components/motion/RevealController";
 
 const lora = Lora({
   variable: "--font-lora",
@@ -44,17 +47,29 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#F5EFE6",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${lora.variable} ${inter.variable}`}>
-      <body className="antialiased selection:bg-[#037533] selection:text-white">
-        <Navbar />
-        {children}
-        <Footer />
+    <html lang="pt-BR" className={`${lora.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Marca o documento antes da primeira pintura para o CSS esconder os elementos que serão revelados */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
+      <body className="antialiased selection:bg-ashu-green selection:text-white">
+        <MotionProvider>
+          <SmoothScroll />
+          <RevealController />
+          <Navbar />
+          {children}
+          <Footer />
+        </MotionProvider>
       </body>
     </html>
   );

@@ -18,8 +18,8 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 }) => {
   const bgClass =
     variant === "red"
-      ? "bg-[#DD0B14] hover:bg-[#A80810] text-white"
-      : "bg-[#037533] hover:bg-[#024E22] text-white";
+      ? "bg-ashu-red hover:bg-ashu-red-dark text-white"
+      : "bg-ashu-green hover:bg-ashu-green-dark text-white";
 
   return (
     <button

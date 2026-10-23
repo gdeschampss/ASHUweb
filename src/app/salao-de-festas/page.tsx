@@ -14,11 +14,11 @@ export default function SalaoDeFestasPage() {
   )}`;
 
   return (
-    <main className="pt-28 pb-20 bg-[#F5EFE6] min-h-screen">
+    <main className="pt-20 pb-20 bg-ashu-cream min-h-screen">
       {/* Header Banner */}
-      <section className="relative py-16 bg-[#037533] text-white border-b-4 border-[#DD0B14]">
+      <section className="relative py-16 bg-ashu-green text-white border-b-4 border-ashu-red">
         <CrossPattern color="#FFFFFF" opacity={0.05} size={48} />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl space-y-4">
+        <div data-reveal-stagger className="mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider text-emerald-100">
             <Building className="w-4 h-4" />
             <span>Infraestrutura Social</span>
@@ -36,11 +36,11 @@ export default function SalaoDeFestasPage() {
 
       {/* Main Details */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div data-reveal-stagger className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div data-reveal-stagger className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Gallery Image Grid */}
             <div className="lg:col-span-7 space-y-4">
-              <div className="relative h-80 rounded-[24px] overflow-hidden border-2 border-[#037533]/20 shadow-lg">
+              <div className="relative h-80 rounded-[24px] overflow-hidden border-2 border-ashu-green/20 shadow-lg">
                 <Image
                   src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80"
                   alt="Salão de Festas ASHU"
@@ -50,8 +50,8 @@ export default function SalaoDeFestasPage() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative h-44 rounded-2xl overflow-hidden border border-[#037533]/20 shadow-xs">
+              <div data-reveal-stagger className="grid grid-cols-2 gap-4">
+                <div className="relative h-44 rounded-2xl overflow-hidden border border-ashu-green/20 shadow-xs">
                   <Image
                     src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
                     alt="Churrasqueira e Cozinha"
@@ -60,7 +60,7 @@ export default function SalaoDeFestasPage() {
                     sizes="25vw"
                   />
                 </div>
-                <div className="relative h-44 rounded-2xl overflow-hidden border border-[#037533]/20 shadow-xs">
+                <div className="relative h-44 rounded-2xl overflow-hidden border border-ashu-green/20 shadow-xs">
                   <Image
                     src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80"
                     alt="Campo de Futebol Anexo"
@@ -73,12 +73,12 @@ export default function SalaoDeFestasPage() {
             </div>
 
             {/* Reservation Info & WhatsApp CTA */}
-            <div className="lg:col-span-5 bg-white p-8 rounded-[24px] border-2 border-[#037533]/20 shadow-md space-y-6">
+            <div className="lg:col-span-5 bg-white p-8 rounded-[24px] border-2 border-ashu-green/20 shadow-md space-y-6">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#037533] block mb-1">
+                <span className="text-xs font-bold uppercase tracking-wider text-ashu-green block mb-1">
                   Solicitação de Reserva
                 </span>
-                <h2 className="text-2xl font-bold text-[#1A1D1B] font-serif">
+                <h2 className="text-2xl font-bold text-ink font-serif">
                   Como Agendar o Salão de Festas?
                 </h2>
                 <p className="text-xs text-gray-600 mt-2">
@@ -86,27 +86,27 @@ export default function SalaoDeFestasPage() {
                 </p>
               </div>
 
-              <div className="space-y-3 text-xs text-[#1A1D1B]">
-                <div className="flex items-center gap-3 p-3 bg-[#F5EFE6] rounded-xl">
-                  <CheckCircle2 className="w-4 h-4 text-[#037533] shrink-0" />
+              <div className="space-y-3 text-xs text-ink">
+                <div className="flex items-center gap-3 p-3 bg-ashu-cream rounded-xl">
+                  <CheckCircle2 className="w-4 h-4 text-ashu-green shrink-0" />
                   <span>Capacidade para até 120 convidados sentados</span>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-[#F5EFE6] rounded-xl">
-                  <CheckCircle2 className="w-4 h-4 text-[#037533] shrink-0" />
+                <div className="flex items-center gap-3 p-3 bg-ashu-cream rounded-xl">
+                  <CheckCircle2 className="w-4 h-4 text-ashu-green shrink-0" />
                   <span>Cozinha equipada com freezer e geladeira industrial</span>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-[#F5EFE6] rounded-xl">
-                  <CheckCircle2 className="w-4 h-4 text-[#037533] shrink-0" />
+                <div className="flex items-center gap-3 p-3 bg-ashu-cream rounded-xl">
+                  <CheckCircle2 className="w-4 h-4 text-ashu-green shrink-0" />
                   <span>Churrasqueira grande com balcão de apoio</span>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-[#F5EFE6] rounded-xl">
-                  <CheckCircle2 className="w-4 h-4 text-[#037533] shrink-0" />
+                <div className="flex items-center gap-3 p-3 bg-ashu-cream rounded-xl">
+                  <CheckCircle2 className="w-4 h-4 text-ashu-green shrink-0" />
                   <span>Estacionamento interno privativo</span>
                 </div>
               </div>
 
               {/* WhatsApp CTA Button */}
-              <div className="pt-4 border-t border-[#037533]/15 space-y-3">
+              <div className="pt-4 border-t border-ashu-green/15 space-y-3">
                 <a
                   href={whatsappUrl}
                   target="_blank"

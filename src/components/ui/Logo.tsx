@@ -3,54 +3,60 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface LogoProps {
-  variant?: "default" | "light" | "footer";
+  variant?: "default" | "light";
   className?: string;
   size?: "sm" | "md" | "lg";
+  /** Classes extras da tagline — use para escondê-la em larguras apertadas */
+  taglineClassName?: string;
+  priority?: boolean;
 }
 
-export const Logo: React.FC<LogoProps> = ({ variant = "default", className = "", size = "md" }) => {
-  const heightPixels = {
-    sm: 42,
-    md: 52,
-    lg: 64,
-  };
+const HEIGHT_PX = {
+  sm: 42,
+  md: 52,
+  lg: 64,
+};
 
+export const Logo: React.FC<LogoProps> = ({
+  variant = "default",
+  className = "",
+  size = "md",
+  taglineClassName = "",
+  priority = false,
+}) => {
   const isLight = variant === "light";
+  const height = HEIGHT_PX[size];
 
   return (
-    <Link href="/" className={`inline-flex items-center gap-3 group focus:outline-none ${className}`}>
+    <Link
+      href="/"
+      aria-label="ASHU — página inicial"
+      className={`inline-flex items-center gap-3 group rounded-lg ${className}`}
+    >
       {/* Official ASHU Emblem Image */}
-      <div className="relative flex items-center justify-center shrink-0">
-        <Image
-          src="/logo.webp"
-          alt="Logo Oficial ASHU"
-          width={heightPixels[size]}
-          height={heightPixels[size]}
-          className="w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
-          style={{ height: `${heightPixels[size]}px` }}
-          priority
-        />
-      </div>
+      <Image
+        src="/logo.webp"
+        alt=""
+        width={HEIGHT_PX.lg}
+        height={HEIGHT_PX.lg}
+        className="w-auto shrink-0 object-contain drop-shadow-md group-hover:scale-105 transition-[height,scale] duration-300 ease-out-expo"
+        style={{ height }}
+        priority={priority}
+      />
 
       {/* Brand Text */}
       <div className="flex flex-col">
-        <div className="flex items-center">
-          <span
-            className={`font-black tracking-wider text-2xl lg:text-3xl leading-none ${
-              isLight ? "text-white" : "text-[#037533]"
-            }`}
-            style={{
-              textShadow: isLight ? "0 2px 4px rgba(0,0,0,0.3)" : "none",
-              fontFamily: "var(--font-inter), sans-serif",
-            }}
-          >
-            ASHU
-          </span>
-        </div>
+        <span
+          className={`font-sans font-black tracking-wider text-2xl lg:text-3xl leading-none ${
+            isLight ? "text-white [text-shadow:0_2px_4px_rgba(0,0,0,0.3)]" : "text-ashu-green"
+          }`}
+        >
+          ASHU
+        </span>
         <span
           className={`text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider leading-tight ${
-            isLight ? "text-emerald-100" : "text-[#024E22]/80"
-          }`}
+            isLight ? "text-emerald-100" : "text-ashu-green-dark/80"
+          } ${taglineClassName}`}
         >
           Associação dos Servidores HU / UFSC
         </span>
