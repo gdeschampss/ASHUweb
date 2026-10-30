@@ -2,16 +2,36 @@ import React from "react";
 import { CrossPattern } from "@/components/ui/CrossPattern";
 import { Building, Calendar, PhoneCall, CheckCircle2, MapPin, Users, MessageSquare } from "lucide-react";
 import Image from "next/image";
+import { whatsappLink } from "@/config/contato";
 
 export const metadata = {
   title: "Salão de Festas & Espaço de Eventos | ASHU HU/UFSC",
   description: "Reserve o Salão de Festas da ASHU para aniversários e comemorações. Estrutura completa com churrasqueiras e cozinha no campus do HU/UFSC.",
 };
 
+const SALOES = [
+  {
+    nome: "Salão Maior",
+    descricao: "Amplo, com mesas e cadeiras para grandes eventos",
+    fotos: [
+      { src: "/fotos/salao-maior-1.jpg", alt: "Salão maior da ASHU com mesas redondas de toalha verde e cadeiras brancas" },
+      { src: "/fotos/salao-maior-2.jpg", alt: "Outra vista do salão maior da ASHU com mesas montadas e balcão ao fundo" },
+    ],
+  },
+  {
+    nome: "Salão Menor",
+    descricao: "Espaço livre com cozinha, ideal para festas menores",
+    fotos: [
+      { src: "/fotos/salao-menor-1.jpg", alt: "Salão menor da ASHU, vazio, com pilares, espelhos e acesso à cozinha" },
+      { src: "/fotos/salao-menor-2.jpg", alt: "Salão menor da ASHU com cadeiras empilhadas e acesso aos banheiros" },
+    ],
+  },
+];
+
 export default function SalaoDeFestasPage() {
-  const whatsappUrl = `https://wa.me/5548999999999?text=${encodeURIComponent(
+  const whatsappUrl = whatsappLink(
     "Olá! Sou servidor/associado e gostaria de consultar a disponibilidade de data para reserva do Salão de Festas da ASHU."
-  )}`;
+  );
 
   return (
     <main className="pt-20 pb-20 bg-ashu-cream min-h-screen">
@@ -39,37 +59,33 @@ export default function SalaoDeFestasPage() {
         <div data-reveal-stagger className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div data-reveal-stagger className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Gallery Image Grid */}
-            <div className="lg:col-span-7 space-y-4">
-              <div className="relative h-80 rounded-[24px] overflow-hidden border-2 border-ashu-green/20 shadow-lg">
-                <Image
-                  src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80"
-                  alt="Salão de Festas ASHU"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-
-              <div data-reveal-stagger className="grid grid-cols-2 gap-4">
-                <div className="relative h-44 rounded-2xl overflow-hidden border border-ashu-green/20 shadow-xs">
-                  <Image
-                    src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
-                    alt="Churrasqueira e Cozinha"
-                    fill
-                    className="object-cover"
-                    sizes="25vw"
-                  />
+            <div className="lg:col-span-7 space-y-8">
+              {SALOES.map((salao) => (
+                <div key={salao.nome} className="space-y-3">
+                  <div className="flex items-baseline gap-3">
+                    <span className="px-3 py-1 bg-ashu-green text-white text-xs font-bold uppercase tracking-wider rounded-lg">
+                      {salao.nome}
+                    </span>
+                    <span className="text-xs text-gray-600">{salao.descricao}</span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {salao.fotos.map((foto) => (
+                      <div
+                        key={foto.src}
+                        className="relative h-56 rounded-2xl overflow-hidden border border-ashu-green/20 shadow-md"
+                      >
+                        <Image
+                          src={foto.src}
+                          alt={foto.alt}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 29vw"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="relative h-44 rounded-2xl overflow-hidden border border-ashu-green/20 shadow-xs">
-                  <Image
-                    src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=800&q=80"
-                    alt="Campo de Futebol Anexo"
-                    fill
-                    className="object-cover"
-                    sizes="25vw"
-                  />
-                </div>
-              </div>
+              ))}
             </div>
 
             {/* Reservation Info & WhatsApp CTA */}

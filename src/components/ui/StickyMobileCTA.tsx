@@ -12,15 +12,15 @@ export const StickyMobileCTA: React.FC = () => {
             Associação ASHU
           </span>
           <span className="text-xs text-ink font-semibold">
-            Formulário em PDF
+            Ficha de cadastro
           </span>
         </div>
         <a
-          href="#formulario-download"
+          href="#inscricao"
           className="min-h-[44px] px-5 py-2.5 bg-ashu-red hover:bg-ashu-red-dark text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md flex items-center justify-center gap-2 transition-all active:scale-98"
         >
           <Download className="w-4 h-4 animate-bounce" />
-          <span>Baixar Ficha</span>
+          <span>Associar-se</span>
           <ArrowRight className="w-3.5 h-3.5" />
         </a>
       </div>

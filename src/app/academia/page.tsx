@@ -39,8 +39,8 @@ export default function AcademiaPage() {
             <div className="lg:col-span-6">
               <div className="relative h-[420px] rounded-[24px] overflow-hidden border-2 border-ashu-green/20 shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80"
-                  alt="Academia ASHU HU UFSC"
+                  src="/fotos/academia.jpg"
+                  alt="Academia da ASHU com aparelhos de musculação, halteres e espelhos"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -51,7 +51,7 @@ export default function AcademiaPage() {
                       Espaço Fitness Próprio
                     </span>
                     <h3 className="text-xl font-bold font-serif">
-                      Equipamentos Modernos & Climatizado
+                      Musculação, Peso Livre & Aeróbico
                     </h3>
                   </div>
                 </div>

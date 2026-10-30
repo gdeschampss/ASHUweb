@@ -113,6 +113,7 @@ export default function RestaurantePage() {
             {/* Restaurant Image */}
             <div className="lg:col-span-6">
               <div className="relative h-[420px] rounded-[24px] overflow-hidden border-2 border-ashu-green/20 shadow-xl">
+                {/* TODO: trocar pela foto real do restaurante quando a cliente enviar */}
                 <Image
                   src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
                   alt="Restaurante A'ntenas HU UFSC"

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { UserPlus, Baby, Gift, Calendar, Utensils, Dumbbell, ArrowUpRight } from "lucide-react";
+import { UserPlus, Baby, Gift, Building, Utensils, Dumbbell, ArrowUpRight } from "lucide-react";
 
 const QUICK_LINKS = [
   {
@@ -26,10 +26,10 @@ const QUICK_LINKS = [
     color: "bg-white text-ashu-green border-2 border-ashu-green/20 hover:border-ashu-green hover:bg-ashu-green-light",
   },
   {
-    title: "Eventos Anuais",
-    subtitle: "Calendário social e esportivo",
-    href: "/eventos",
-    icon: Calendar,
+    title: "Salão de Festas",
+    subtitle: "Espaço para suas comemorações",
+    href: "/salao-de-festas",
+    icon: Building,
     color: "bg-white text-ashu-green border-2 border-ashu-green/20 hover:border-ashu-green hover:bg-ashu-green-light",
   },
   {

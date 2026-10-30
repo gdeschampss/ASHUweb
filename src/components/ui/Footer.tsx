@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
 import { CrossPattern } from "./CrossPattern";
+import { CONTATO, whatsappLink } from "@/config/contato";
 import { MapPin, Phone, Mail, Clock, Instagram, ShieldCheck, Heart } from "lucide-react";
 
 export const Footer: React.FC = () => {
@@ -104,9 +105,20 @@ export const Footer: React.FC = () => {
                 <span>R. Maria Flora Pausewang, s/n - Trindade, Florianópolis - SC, 88036-800 (Anexo ao HU/UFSC)</span>
               </li>
               <li className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-emerald-300 shrink-0" />
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors hover:underline text-emerald-200"
+                >
+                  WhatsApp {CONTATO.whatsappDisplay}
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
                 <Instagram className="w-4 h-4 text-emerald-300 shrink-0" />
                 <a
-                  href="https://www.instagram.com/gremiodohu/"
+                  href={CONTATO.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors hover:underline text-emerald-200"

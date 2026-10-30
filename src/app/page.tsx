@@ -2,7 +2,6 @@ import React from "react";
 import { Hero } from "@/components/home/Hero";
 import { QuickLinksGrid } from "@/components/home/QuickLinksGrid";
 import { BenefitsList } from "@/components/home/BenefitsList";
-import { EventsCalendar } from "@/components/home/EventsCalendar";
 import { StatCounter } from "@/components/ui/StatCounter";
 import { ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -60,10 +59,7 @@ export default function HomePage() {
       {/* 4. Benefits List */}
       <BenefitsList />
 
-      {/* 5. Events Calendar */}
-      <EventsCalendar />
-
-      {/* 6. High-Conversion Red CTA Banner */}
+      {/* 5. High-Conversion Red CTA Banner */}
       <section className="py-20 bg-ashu-red text-white relative overflow-hidden">
         <div data-reveal-stagger className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider text-white">

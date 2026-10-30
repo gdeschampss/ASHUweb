@@ -1,27 +1,33 @@
 import React from "react";
 import { StickyMobileCTA } from "@/components/ui/StickyMobileCTA";
 import { CrossPattern } from "@/components/ui/CrossPattern";
-import { DownloadButton } from "@/components/ui/DownloadButton";
-import { UserPlus, CheckCircle2, ShieldCheck, HeartPulse, FileText } from "lucide-react";
+import { InscricaoFlow } from "@/components/associado/InscricaoFlow";
+import { UserPlus, CheckCircle2, ShieldCheck, HeartPulse, ArrowDown, Info } from "lucide-react";
 
 export const metadata = {
-  title: "Seja Associado | ASHU — Formulário e Planos",
-  description: "Saiba como se associar à ASHU. Vantagens exclusivas para servidores efetivos do HU/UFSC, EBSERH e terceirizados por apenas 1% do salário base.",
+  title: "Seja Associado | ASHU — Como se associar",
+  description: "Saiba como se associar à ASHU: baixe a ficha de cadastro, envie os documentos pelo WhatsApp e aproveite os benefícios. Para servidores do HU/UFSC/EBSERH e terceirizados do HU.",
 };
 
-const CONVENIOS_LIST = [
-  "Academia Gratuita",
-  "A'ntenas Restaurante (10% OFF)",
-  "CEI-ASHU (Creche)",
-  "Campo Oficial de Futebol",
-  "Quadras Poliesportivas",
-  "Salões de Festas",
-  "Assessoria Jurídica Técnica",
-  "Unimed Grande Florianópolis",
-  "TempoMed",
-  "Uniodonto Santa Catarina",
-  "SIDESC",
-  "Eventos & Festas Anuais",
+// Lista oficial de benefícios enviada pela ASHU
+const BENEFICIOS_LIST = [
+  "Academia gratuita para sócio e dependentes",
+  "Desconto na locação dos salões",
+  "Participação em eventos corporativos da associação",
+  "Campo de futebol, quadra de beach tennis e quadra poliesportiva",
+  "Assessoria jurídica",
+  "Convênios com UNIMED e TEMPOMED",
+  "Clube de benefícios: SIDESC e DR. EXAMES",
+  "Aulas extras com professores parceiros (escolinha de futebol, capoeira e kung fu — valores definidos pelos professores)",
+  "Desconto diferenciado na creche CEI-ASHU",
+  "Desconto no Restaurante A'ntenas para sócios e dependentes",
+];
+
+const BENEFICIOS_CARD = [
+  "Academia gratuita para sócio e dependentes",
+  "Desconto no Restaurante A'ntenas",
+  "Desconto na creche CEI-ASHU",
+  "Convênios UNIMED, TEMPOMED, SIDESC e DR. EXAMES",
 ];
 
 export default function SejaAssociadoPage() {
@@ -41,7 +47,7 @@ export default function SejaAssociadoPage() {
             Associe-se e Fortaleça Nossa Comunidade
           </h1>
           <p className="text-base text-white/90 leading-relaxed">
-            Benefícios completos para você e toda a sua família por uma mensalidade justa descontada em folha.
+            Benefícios completos para você e toda a sua família por uma contribuição justa, paga por débito automático.
           </p>
         </div>
       </section>
@@ -103,7 +109,7 @@ export default function SejaAssociadoPage() {
               Quanto custa se associar?
             </h2>
             <p className="text-xs sm:text-sm text-ashu-green-dark/80 mt-2">
-              Desconto em folha sem burocracia nem taxas ocultas.
+              Contribuição mensal sobre o salário base, via débito automático no Banco do Brasil ou na Caixa.
             </p>
           </div>
 
@@ -132,32 +138,23 @@ export default function SejaAssociadoPage() {
                 </div>
 
                 <ul className="space-y-2.5 text-xs text-ink">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-ashu-green" />
-                    <span>Academia 100% gratuita</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-ashu-green" />
-                    <span>Desconto no Restaurante A&apos;ntenas</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-ashu-green" />
-                    <span>Desconto no CEI-ASHU</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-ashu-green" />
-                    <span>Acesso a Planos de Saúde e Odonto</span>
-                  </li>
+                  {BENEFICIOS_CARD.map((b) => (
+                    <li key={b} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-ashu-green shrink-0" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               <div className="mt-8">
-                <DownloadButton
-                  label="Baixar Ficha de Servidor"
-                  fileTitle="Ficha de Servidor Efetivo PDF"
-                  variant="green"
-                  className="w-full py-3.5"
-                />
+                <a
+                  href="#inscricao"
+                  className="w-full px-5 py-3.5 bg-ashu-green hover:bg-ashu-green-dark text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md flex items-center justify-center gap-2 transition-colors"
+                >
+                  <span>Quero me associar</span>
+                  <ArrowDown className="w-4 h-4" />
+                </a>
               </div>
             </div>
 
@@ -181,32 +178,31 @@ export default function SejaAssociadoPage() {
                 </div>
 
                 <ul className="space-y-2.5 text-xs text-ink">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-ashu-red" />
-                    <span>Uso da academia e quadras</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-ashu-red" />
-                    <span>Desconto no Restaurante A&apos;ntenas</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-ashu-red" />
-                    <span>Clube de Benefícios & Convênios</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-ashu-red" />
-                    <span>Participação nos eventos e festas</span>
-                  </li>
+                  {BENEFICIOS_CARD.map((b) => (
+                    <li key={b} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-ashu-red shrink-0" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
                 </ul>
+
+                <div className="mt-5 flex items-start gap-2 p-3 bg-white rounded-xl border border-gray-200 text-xs text-gray-700 leading-relaxed">
+                  <Info className="w-4 h-4 text-ashu-red shrink-0 mt-px" />
+                  <span>
+                    É preciso comprovar <strong>1 ano de vínculo com o HU</strong> ou pagar{" "}
+                    <strong>3 contribuições</strong> ao entrar na ASHU.
+                  </span>
+                </div>
               </div>
 
               <div className="mt-8">
-                <DownloadButton
-                  label="Baixar Ficha Terceirizados"
-                  fileTitle="Ficha de Terceirizados PDF"
-                  variant="red"
-                  className="w-full py-3.5"
-                />
+                <a
+                  href="#inscricao"
+                  className="w-full px-5 py-3.5 bg-ashu-red hover:bg-ashu-red-dark text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md flex items-center justify-center gap-2 transition-colors"
+                >
+                  <span>Quero me associar</span>
+                  <ArrowDown className="w-4 h-4" />
+                </a>
               </div>
             </div>
           </div>
@@ -223,7 +219,7 @@ export default function SejaAssociadoPage() {
           </div>
 
           <div data-reveal-stagger className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
-            {CONVENIOS_LIST.map((item) => (
+            {BENEFICIOS_LIST.map((item) => (
               <div
                 key={item}
                 className="px-4 py-2.5 bg-white rounded-full border border-ashu-green/20 text-xs font-bold text-ashu-green-dark flex items-center gap-2 shadow-2xs"
@@ -236,34 +232,22 @@ export default function SejaAssociadoPage() {
         </div>
       </section>
 
-      {/* Download Section (Ficha em PDF) */}
-      <section id="formulario-download" className="py-16 bg-white border-t border-ashu-green/15">
-        <div data-reveal-stagger className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="p-4 bg-ashu-green-light text-ashu-green rounded-2xl w-fit mx-auto">
-            <FileText className="w-8 h-8" />
+      {/* Como se associar — passo a passo */}
+      <section id="inscricao" className="py-16 bg-ashu-green-light/50 border-t border-ashu-green/15 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div data-reveal-stagger className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-bold uppercase tracking-wider text-ashu-green block mb-1">
+              Inscrição
+            </span>
+            <h2 className="text-3xl font-bold text-ink font-serif mb-2">
+              Como se associar — passo a passo
+            </h2>
+            <p className="text-sm text-gray-600">
+              Baixe a ficha, preencha, assine e envie com os documentos para o WhatsApp da ASHU.
+            </p>
           </div>
 
-          <h2 className="text-3xl font-bold text-ink font-serif">
-            Baixe a Ficha de Autorização de Desconto
-          </h2>
-
-          <p className="text-sm text-gray-600 max-w-xl mx-auto">
-            Preencha a ficha de autorização de desconto em folha e entregue na Secretaria da ASHU (anexo ao HU/UFSC) ou envie digitalizada pelo WhatsApp.
-          </p>
-
-          <div className="p-8 bg-ashu-cream rounded-[24px] border-2 border-dashed border-ashu-green/40 max-w-xl mx-auto space-y-4">
-            <div className="flex items-center justify-between text-left">
-              <div>
-                <h4 className="font-bold text-sm text-ashu-green">Ficha_Inscricao_ASHU.pdf</h4>
-                <p className="text-xs text-gray-500">Documento Oficial em PDF (1.2 MB)</p>
-              </div>
-              <DownloadButton
-                label="Download"
-                fileTitle="Ficha Oficial da ASHU (PDF)"
-                variant="red"
-              />
-            </div>
-          </div>
+          <InscricaoFlow />
         </div>
       </section>
     </main>

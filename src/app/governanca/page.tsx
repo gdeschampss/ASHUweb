@@ -3,7 +3,8 @@ import { GOVERNANCA_DATA } from "@/data/governanca";
 import { CrossPattern } from "@/components/ui/CrossPattern";
 import { GovernanceBlock } from "@/components/governanca/GovernanceBlock";
 import { DownloadButton } from "@/components/ui/DownloadButton";
-import { ShieldCheck, FileText } from "lucide-react";
+import { ShieldCheck, FileText, MessageCircle } from "lucide-react";
+import { whatsappLink } from "@/config/contato";
 
 export const metadata = {
   title: "Governança & Transparência | ASHU HU/UFSC",
@@ -78,12 +79,25 @@ export default function GovernancaPage() {
                     </p>
                   </div>
 
-                  <DownloadButton
-                    label="Baixar PDF Auditado"
-                    fileTitle={`Relatório ${rel.year}`}
-                    variant="green"
-                    className="w-full py-2.5"
-                  />
+                  {rel.pdfUrl !== "#" ? (
+                    <DownloadButton
+                      label="Baixar PDF Auditado"
+                      href={rel.pdfUrl}
+                      variant="green"
+                      className="w-full py-2.5"
+                    />
+                  ) : (
+                    // TODO: subir os PDFs auditados em public/docs e preencher pdfUrl em governanca.ts
+                    <a
+                      href={whatsappLink(`Olá! Gostaria de receber o relatório de prestação de contas da ASHU de ${rel.year}.`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full px-5 py-2.5 bg-white border-2 border-ashu-green text-ashu-green hover:bg-ashu-green hover:text-white text-xs font-bold uppercase tracking-wider rounded-xl flex items-center justify-center gap-2 transition-colors"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Solicitar pelo WhatsApp</span>
+                    </a>
+                  )}
                 </div>
               ))}
             </div>

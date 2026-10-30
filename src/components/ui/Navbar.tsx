@@ -40,7 +40,6 @@ const STRUCTURE_LINKS: StructureLink[] = [
 // e "Seja Associado" no botão de destaque.
 const DESKTOP_BEFORE: NavLink[] = [{ href: "/quem-somos", label: "Quem Somos" }];
 const DESKTOP_AFTER: NavLink[] = [
-  { href: "/eventos", label: "Eventos" },
   { href: "/governanca", label: "Governança" },
 ];
 

@@ -65,13 +65,59 @@ export default function CeiPage() {
             <div className="lg:col-span-6">
               <div className="relative h-96 rounded-[24px] overflow-hidden border-2 border-ashu-green/20 shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80"
-                  alt="Crianças no CEI ASHU"
+                  src="/fotos/cei-entrada.jpg"
+                  alt="Entrada do CEI-ASHU com toldo e mural colorido"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Galeria */}
+      <section className="pb-16">
+        <div data-reveal-stagger className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-xs font-bold uppercase tracking-wider text-ashu-green block mb-1">
+              Conheça o Espaço
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-ink font-serif">
+              Cuidar, aprender e crescer
+            </h2>
+          </div>
+
+          <div data-reveal-stagger className="grid grid-cols-2 lg:grid-cols-12 gap-4">
+            {/* Colagem oficial: exibida inteira por conter textos e logo */}
+            <div className="col-span-2 lg:col-span-8 rounded-[24px] overflow-hidden border-2 border-ashu-green/20 shadow-xl bg-white">
+              <Image
+                src="/fotos/cei-colagem.jpg"
+                alt="Colagem do CEI-ASHU: entrada, salas com brinquedos, brinquedoteca, área verde e crianças brincando"
+                width={1374}
+                height={1145}
+                className="w-full h-auto object-contain"
+                sizes="(max-width: 1024px) 100vw, 66vw"
+              />
+            </div>
+            <div className="relative aspect-[9/16] lg:aspect-auto lg:col-span-2 rounded-2xl overflow-hidden border border-ashu-green/20 shadow-md">
+              <Image
+                src="/fotos/cei-fachada-vertical-1.jpg"
+                alt="Fachada do CEI-ASHU"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 50vw, 17vw"
+              />
+            </div>
+            <div className="relative aspect-[9/16] lg:aspect-auto lg:col-span-2 rounded-2xl overflow-hidden border border-ashu-green/20 shadow-md">
+              <Image
+                src="/fotos/cei-fachada-vertical-2.jpg"
+                alt="Fachada do CEI-ASHU vista de outro ângulo"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 50vw, 17vw"
+              />
             </div>
           </div>
         </div>
